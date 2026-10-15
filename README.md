@@ -71,14 +71,13 @@ The package includes ESM and TypeScript declarations. Cloudflare Workers is the 
 
 ## Development environment
 
-- mise (manages Node.js 24)
+- Node.js 24
 - npm
 - TypeScript
 
 ## Development
 
 ```sh
-mise install
 npm ci
 npm run check
 ```
