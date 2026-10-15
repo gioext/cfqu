@@ -1,0 +1,35 @@
+{
+  "name": "cfqu",
+  "version": "0.1.0",
+  "description": "Minimal queue routing for Cloudflare Workers.",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "npm run build && tsc --noEmit",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "check": "npm run typecheck && node --test test/*.test.mjs",
+    "prepack": "npm run check"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261015.1",
+    "hono": "^4.13.13",
+    "miniflare": "^5.20261012.0-beta",
+    "typescript": "^7.0.2"
+  }
+}
